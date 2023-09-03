@@ -30,7 +30,7 @@ Try to run this command ```LaTeXCompiler main``` in your own project to test.
 
 **Step 4**
 
-If the process above works, add these code to ```Setting.json``` of vscode:
+If the test above works, add these code to ```settings.json``` of vscode:
 
 ```
     "latex-workshop.showContextMenu": true,
@@ -132,13 +132,5 @@ If the process above works, add these code to ```Setting.json``` of vscode:
       "latex-workshop.latex.autoClean.run": "onFailed",
       "latex-workshop.latex.recipe.default": "lastUsed",
       "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
-      "editor.codeActionsOnSave": {
-  
-  
-      
-      },
-      "editor.tokenColorCustomizations": {
-      
-      }
 ```
 and it will work.
