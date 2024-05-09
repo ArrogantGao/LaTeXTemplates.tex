@@ -1,8 +1,20 @@
-\documentclass[preprint]{elsarticle}
+%% ****** Start of file aiptemplate.tex ****** %
+%%
+%%   This file is part of the files in the distribution of AIP substyles for REVTeX4.
+%%   Version 4.1 of 9 October 2009.
+%%
+%
+% This is a template for producing documents for use with 
+% the REVTEX 4.1 document class and the AIP substyles.
+% 
+% Copy this file to another name and then work on that file.
+% That way, you always have this original template file to use.
+
+\documentclass[aip,reprint]{revtex4-1}
+%\documentclass[aip,reprint]{revtex4-1}
 
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{graphicx}% Include figure files
-\graphicspath{{submission/figs}}
 
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
@@ -16,10 +28,6 @@
 \usepackage{subfigure}
 \usepackage{autobreak}
 
-
-
-%Macros for mathematical notations
-
 \newcommand{\V}[1]{\boldsymbol{#1}} %# vector
 \newcommand{\M}[1]{\boldsymbol{#1}} %# matrix
 \newcommand{\Set}[1]{\mathbb{#1}} %# set
@@ -31,7 +39,7 @@
 \newcommand{\grad}{\M{\nabla}} %gradient
 \newcommand{\av}[1]{\left\langle #1\right\rangle } %take average
 
-\newcommand{\sM}[1]{\M{\mathcal{#1}}} %matrix in mathcal font
+\newcommand{\sM}[1]{\M{\mathcal{#1}}} %matrix in mathcal font or operator
 \newcommand{\dprime}{\prime\prime} % double prime
 %\global\long\def\i{\iota}
 %\renewcommand{\i}{\iota} %i for imaginary unit
@@ -44,31 +52,72 @@
 \newcommand{\rev}[1] {{\color{blue}#1}}
 \newcommand{\gao}[1] {{\color{red}{\textit{xz comment}}: \color{red}#1}}
 
-\begin{document}
-\preprint{Preprint}
 
-\title{Atricle Title}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{etoolbox}
+
+%% Apr 2021: AIP requests that the corresponding 
+%% email to be moved after the affiliations
+%\makeatletter
+%\def\@email#1#2{%
+% \endgroup
+% \patchcmd{\titleblock@produce}
+%  {\frontmatter@RRAPformat}
+%  {\frontmatter@RRAPformat{\produce@RRAP{*#1\href{mailto:#2}{#2}}}\frontmatter@RRAPformat}
+%  {}{}
+%}%
+
+%\draft
+\makeatother
+\begin{document}
+
+% Use the \preprint command to place your local institutional report number 
+% on the title page in preprint mode.
+% Multiple \preprint commands are allowed.
+%\preprint{}
+
+\title{Title} %Title of paper
+
+% repeat the \author .. \affiliation  etc. as needed
+% \email, \thanks, \homepage, \altaffiliation all apply to the current author.
+% Explanatory text should go in the []'s, 
+% actual e-mail address or url should go in the {}'s for \email and \homepage.
+% Please use the appropriate macro for the type of information
+
+% \affiliation command applies to all authors since the last \affiliation command. 
+% The \affiliation command should follow the other information.
+
+\author{Author}
+\email[]{email}
+\affiliation{affiliation}
+
+
+% Collaboration name, if desired (requires use of superscriptaddress option in \documentclass). 
+% \noaffiliation is required (may also be used with the \author command).
+%\collaboration{}
+%\noaffiliation
 
 \date{\today}
 
-%%%%% Begin Abstract %%%%%%%%%%%
 \begin{abstract}
-
+    This is an abstract.
 \end{abstract}
 
-%%%%% end %%%%%%%%%%%
+\pacs{}% insert suggested PACS numbers in braces on next line
 
-\begin{keyword}
-    
-\end{keyword}
-%%%% maketitle %%%%%
-\maketitle
+\maketitle %\maketitle must follow title, authors, abstract and \pacs
+%\section{Introduction}
 
-%%%% Start %%%%%%
+\section{Introduction}
+
+This is an intro.
+
 
 
 \bibliography{groupbib}
 
-
-
 \end{document}
+%
+% ****** End of file aiptemplate.tex ******
